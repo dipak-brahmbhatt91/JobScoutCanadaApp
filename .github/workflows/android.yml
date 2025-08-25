@@ -23,6 +23,9 @@ jobs:
       - name: Set up Gradle
         uses: gradle/gradle-build-action@v3
 
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew   # ✅ This fixes exit code 126
+
       - name: Build with Gradle
         run: ./gradlew build
 
